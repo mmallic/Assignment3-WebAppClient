@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Movie List</h1>
+
+    <form id="movieForm">
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="director" placeholder="Director" required>
+        <input type="number" id="release_year" placeholder="Year" required>
+        <button type="submit">Add Movie</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Director</th>
+                <th>Year</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="movieTable"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
