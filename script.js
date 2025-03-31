@@ -5,7 +5,7 @@ const movieTable = document.getElementById('movieTable');
 
 // Fetch movies from backend and display in table
 function fetchMovies() {
-    fetch ('http://movie-review-app.azurewebsites.net/api/movies')    // ('http://localhost:3000/movies')
+    fetch ('https://movie-review-app.azurewebsites.net/api/movies')    // ('http://localhost:3000/movies')
         .then(response => response.json())
         .then(data => {
             movieTable.innerHTML = ''; // Clear table before adding new data
@@ -35,7 +35,7 @@ movieForm.addEventListener('submit', event => {
     const director = document.getElementById('director').value;
     const release_year = document.getElementById('release_year').value;
 
-    fetch ('http://movie-review-app.azurewebsites.net/api/movies', {        //('http://localhost:3000/movies'
+    fetch ('https://movie-review-app.azurewebsites.net/api/movies', {        //('http://localhost:3000/movies'
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, director, release_year })
@@ -50,7 +50,7 @@ movieForm.addEventListener('submit', event => {
 
 // Delete a movie
 function deleteMovie(id) {
-    fetch(`http://movie-review-app.azurewebsites.net/api/movies/${id}`, {                 //http://localhost:3000/movies/${id}
+    fetch(`https://movie-review-app.azurewebsites.net/api/movies/${id}`, {                 //http://localhost:3000/movies/${id}
         method: 'DELETE'
     })
     .then(response => response.json())
@@ -76,7 +76,7 @@ function editRow(button, id) {
             release_year: row.children[2].innerText
         };
 
-        fetch(`http://movie-review-app.azurewebsites.net/api/movies/${id}`, {             //http://localhost:3000/movies/${id}
+        fetch(`https://movie-review-app.azurewebsites.net/api/movies/${id}`, {             //http://localhost:3000/movies/${id}
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updatedData)
